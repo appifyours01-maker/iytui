@@ -131,11 +131,14 @@ class ApiService {
   bool _isConnected = false;
   bool get isConnected => _isConnected;
 
-  // Get the stored token
+  // Get the stored token (private)
   Future<String?> _getToken() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getString('auth_token');
   }
+
+  // Public wrapper for getToken — used by external services like ShiprocketService
+  Future<String?> getToken() => _getToken();
 
   Future<String?> _getUserId() async {
     final prefs = await SharedPreferences.getInstance();
