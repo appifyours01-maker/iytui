@@ -2583,7 +2583,7 @@ class _HomePageState extends State<HomePage> {
                                 padding: EdgeInsets.zero,
                                 constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
                               ),
-                            ),
+                            ],
                           ),
                         );
                       },
