@@ -576,7 +576,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
       ),
-      cardTheme: const CardThemeData(
+      cardTheme: const CardTheme(
         elevation: 4,
         shadowColor: Colors.black12,
         shape: RoundedRectangleBorder(
@@ -2250,7 +2250,6 @@ class _HomePageState extends State<HomePage> {
         : (manualDiscountPrice > 0 ? manualDiscountPrice : basePrice);
     final bool hasDiscount = hasPercentDiscount || (manualDiscountPrice > 0 && manualDiscountPrice < basePrice);
     final String? image = product['imageAsset'] ?? product['image'];
-    final String rating = product['rating']?.toString() ?? '4.0';
     final int quantityAvailable = int.tryParse((product['quantity'] ?? '10').toString()) ?? 10;
     final bool isSoldOut = quantityAvailable <= 0;
     final String discountLabel;
@@ -2584,7 +2583,7 @@ class _HomePageState extends State<HomePage> {
                                 padding: EdgeInsets.zero,
                                 constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
                               ),
-                            ],
+                            ),
                           ),
                         );
                       },
